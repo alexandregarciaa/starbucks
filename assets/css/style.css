@@ -3,6 +3,7 @@
 body {
     font-family: 'Open Sans', sans-serif;
     margin: 0;
+    box-sizing: border-box;
 }
 .button {
     display: inline-block;
@@ -88,6 +89,37 @@ h2 {
     width:24px;
     height:24px;
 }
+.menu-opener {
+    display: none;
+}
+menu {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+menu ul, 
+menu li {
+    list-style: none;
+}
+menu ul {
+    display: flex;
+}
+menu li a {
+    color: #333;
+    text-transform: uppercase;
+    font-size: 13px;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 0 5px;
+    display: flex;
+    align-items: center;
+    font-weight: 30px;
+    line-height: 40px;
+}
+menu li a:hover {
+    color: #999;
+}
+
 .banner {
     background-image: url('../images/bg.jpg');
     background-position: center;
@@ -253,11 +285,41 @@ footer {
         padding-left: 20px;
         padding-right: 20px;
     }
+
 }
 @media (min-width: 426px) and (max-width:768px) {
     .container {
         padding-left: 20px;
         padding-right: 20px;
+    }
+    .menu-opener {
+        display: block;
+        height: 40px;
+        margin-right: 20px; 
+    }
+    nav {
+        display: none;
+        position: absolute;
+        z-index: 99;
+        background-color: rgba(0,0,0,0.6);
+        width: 60vw;
+        height: calc(100vh - 70px);
+        top: 110px;
+        right: 0;   
+    }
+    menu ul {
+        flex-direction: column;
+    }
+    menu li a {
+        font-weight: bold;
+        height: 80px;
+        font-size: 18px;  
+        border: 0;  
+        color: #FFF;
+    }
+    menu li a:hover, .active a {
+        border: 0;
+        color:#333;
     }
     .area1 {
         grid-template-columns: 3fr 2fr;
@@ -274,11 +336,40 @@ footer {
         padding-left: 20px;
         padding-right: 20px;
     }
+    .menu-opener {
+        display: block;
+        height: 40px;
+        margin-right: 20px; 
+    }
+    nav {
+        display: none;
+        position: absolute;
+        z-index: 99;
+        background-color: rgba(0,0,0,0.6);
+        width: 70vw;
+        height: calc(100vh - 70px);
+        top: 110px;
+        right: 0;   
+    }
+    menu ul {
+        flex-direction: column;
+    }
+    menu li a {
+        font-weight: bold;
+        height: 80px;
+        font-size: 18px;  
+        border: 0;  
+        color: #FFF;
+    }
+    menu li a:hover, .active a {
+        border: 0;
+        color:#333;
+    }
     .header--menu {
         margin-left: 20px;
     }
     .header_search input {
-        max-width: 80px;
+        max-width: 100px;
     }
 
     h1 {
